@@ -1,8 +1,6 @@
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
-const startButton = document.getElementById('startQuiz');
-const initialSection = document.getElementById('initialSection');
 
 const questions = [
   {
@@ -39,11 +37,6 @@ let currentQuestion = 0;
 let numCorrect = 0;
 
 function buildQuiz() {
-  initialSection.style.display = 'none';
-  quizContainer.style.display = 'block';
-  submitButton.style.display = 'block';
-  resultsContainer.style.display = 'none';
-
   const currentQuestionData = questions[currentQuestion];
 
   const questionOutput = `
@@ -103,4 +96,5 @@ function showResults() {
 }
 
 submitButton.addEventListener('click', showNextQuestion);
-startButton.addEventListener('click', buildQuiz);
+
+buildQuiz();
