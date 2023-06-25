@@ -1,6 +1,8 @@
 const quizContainer = document.getElementById('quiz');
 const resultsContainer = document.getElementById('results');
 const submitButton = document.getElementById('submit');
+const startButton = document.getElementById('startQuiz');
+const initialSection = document.getElementById('initialSection');
 
 const questions = [
   {
@@ -37,6 +39,11 @@ let currentQuestion = 0;
 let numCorrect = 0;
 
 function buildQuiz() {
+  initialSection.style.display = 'none';
+  quizContainer.style.display = 'block';
+  submitButton.style.display = 'block';
+  resultsContainer.style.display = 'none';
+
   const currentQuestionData = questions[currentQuestion];
 
   const questionOutput = `
@@ -68,7 +75,7 @@ function showNextQuestion() {
   const selectedOption = document.querySelector('input[name="question"]:checked');
 
   if (!selectedOption) {
-    return;
+    return; // Se nenhuma opção for selecionada, não prosseguir
   }
 
   const userAnswer = selectedOption.value;
@@ -93,12 +100,7 @@ function showResults() {
   quizContainer.style.display = 'none';
   submitButton.style.display = 'none';
   resultsContainer.style.display = 'block';
-
-  const container = document.querySelector('.container');
-  container.firstElementChild.style.display = 'none';
-  container.children[1].style.display = 'none';
 }
 
 submitButton.addEventListener('click', showNextQuestion);
-
-buildQuiz();
+startButton.addEventListener('click', buildQuiz);
