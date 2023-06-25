@@ -68,7 +68,7 @@ function showNextQuestion() {
   const selectedOption = document.querySelector('input[name="question"]:checked');
 
   if (!selectedOption) {
-    return; // Se nenhuma opção for selecionada, não prosseguir
+    return;
   }
 
   const userAnswer = selectedOption.value;
@@ -93,6 +93,10 @@ function showResults() {
   quizContainer.style.display = 'none';
   submitButton.style.display = 'none';
   resultsContainer.style.display = 'block';
+
+  const container = document.querySelector('.container');
+  container.firstElementChild.style.display = 'none';
+  container.children[1].style.display = 'none';
 }
 
 submitButton.addEventListener('click', showNextQuestion);
