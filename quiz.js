@@ -33,68 +33,53 @@ const questions = [
   // adicione mais perguntas aqui
 ];
 
-let currentQuestion = 0;
-let numCorrect = 0;
-
 function buildQuiz() {
-  const currentQuestionData = questions[currentQuestion];
+  const output = [];
 
-  const questionOutput = `
-    <div class="question">${currentQuestionData.question}</div>
-    <div class="answers">
-      ${buildAnswers(currentQuestionData)}
-    </div>
-  `;
+  questions.forEach((currentQuestion, questionNumber) => {
+    const answers = [];
 
-  quizContainer.innerHTML = questionOutput;
-}
+    for (letter in currentQuestion.answers) {
+      answers.push(
+        `<label>
+            <input type="radio" name="question${questionNumber}" value="${letter}">
+            ${letter} : ${currentQuestion.answers[letter]}
+         </label>`
+      );
+    }
 
-function buildAnswers(questionData) {
-  const answers = [];
-
-  for (letter in questionData.answers) {
-    answers.push(
-      `<label>
-        <input type="radio" name="question" value="${letter}">
-        ${letter} : ${questionData.answers[letter]}
-      </label>`
+    output.push(
+      `<div class="question"> ${currentQuestion.question} </div>
+       <div class="answers"> ${answers.join('')} </div>`
     );
-  }
+  });
 
-  return answers.join('');
-}
-
-function showNextQuestion() {
-  const selectedOption = document.querySelector('input[name="question"]:checked');
-
-  if (!selectedOption) {
-    return; // Se nenhuma opção for selecionada, não prosseguir
-  }
-
-  const userAnswer = selectedOption.value;
-
-  if (userAnswer === questions[currentQuestion].correctAnswer) {
-    numCorrect++;
-  }
-
-  currentQuestion++;
-
-  if (currentQuestion < questions.length) {
-    buildQuiz();
-  } else {
-    showResults();
-  }
+  quizContainer.innerHTML = output.join('');
 }
 
 function showResults() {
-  const percentageCorrect = (numCorrect / questions.length) * 100;
-  const resultOutput = `Você acertou ${numCorrect} de ${questions.length} perguntas (${percentageCorrect.toFixed(2)}%).`;
-  resultsContainer.innerHTML = resultOutput;
-  quizContainer.style.display = 'none';
-  submitButton.style.display = 'none';
-  resultsContainer.style.display = 'block';
+  const answerContainers = quizContainer.querySelectorAll('.answers');
+
+  let numCorrect = 0;
+
+  questions.forEach((currentQuestion, questionNumber) => {
+    const answerContainer = answerContainers[questionNumber];
+    const selector = `input[name=question${questionNumber}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+    if (userAnswer === currentQuestion.correctAnswer) {
+      numCorrect++;
+
+      answerContainers[questionNumber].style.color = 'lightgreen';
+    }
+    else {
+      answerContainers[questionNumber].style.color = 'red';
+    }
+  });
+
+  resultsContainer.innerHTML = `${numCorrect} de ${questions.length} perguntas corretas.`;
 }
 
-submitButton.addEventListener('click', showNextQuestion);
-
 buildQuiz();
+
+submitButton.addEventListener('click', showResults);
