@@ -147,7 +147,7 @@ function buildQuiz() {
   const currentQuestionData = questions[currentQuestion];
 
   const questionOutput = `
-    <div class="question">${currentQuestionData.question}</div>
+    <div class="question"><strong>${currentQuestionData.question}</strong></div>
     <div class="answers">
       ${buildAnswers(currentQuestionData)}
     </div>
@@ -175,7 +175,7 @@ function showNextQuestion() {
   const selectedOption = document.querySelector('input[name="question"]:checked');
 
   if (!selectedOption) {
-    return; // Se nenhuma opção for selecionada, não prosseguir
+    return; 
   }
 
   const userAnswer = selectedOption.value;
@@ -195,11 +195,27 @@ function showNextQuestion() {
 
 function showResults() {
   const percentageCorrect = (numCorrect / currentQuestion) * 100;
-  const resultOutput = `Você acertou ${numCorrect} de ${currentQuestion} perguntas (${percentageCorrect.toFixed(2)}%).`;
+  let resultOutput = '';
+
+  if (percentageCorrect >= 80) {
+    resultOutput = `Parabéns! Você entende do mundo dos jogos! Você acertou ${numCorrect} de ${currentQuestion} perguntas (${percentageCorrect.toFixed(2)}%).`;
+  } else if (percentageCorrect >= 40) {
+    resultOutput = `Ótimo! Mas tenha mais sorte na próxima vez. Você acertou ${numCorrect} de ${currentQuestion} perguntas (${percentageCorrect.toFixed(2)}%).`;
+  } else {
+    resultOutput = `Você precisa estudar mais sobre jogos. Você acertou ${numCorrect} de ${currentQuestion} perguntas (${percentageCorrect.toFixed(2)}%).`;
+  }
+
+  const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = resultOutput;
+
+  const quizContainer = document.getElementById('quiz');
   quizContainer.style.display = 'none';
+
+  const submitButton = document.getElementById('submit');
   submitButton.style.display = 'none';
-  resultsContainer.style.display = 'block';
+
+  const container = document.querySelector('.container');
+  container.style.display = 'block';
 }
 
 submitButton.addEventListener('click', showNextQuestion);
