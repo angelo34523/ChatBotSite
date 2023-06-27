@@ -1,0 +1,54 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  margin-top: 50px;
+}
+
+#quiz {
+  margin: 50px 0;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+#submit {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#submit:hover {
+  background-color: #0062cc;
+}
+
+#results {
+  margin-top: 50px;
+  font-size: 24px;
+}
+
+#creditos {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 15px;
+  color: black;
+}
