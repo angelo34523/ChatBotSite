@@ -47,8 +47,12 @@ input[type="radio"] {
 
 #creditos {
   position: fixed;
-  bottom: 10px;
-  left: 10px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
   font-size: 15px;
   color: black;
+  background-color: white;
 }
