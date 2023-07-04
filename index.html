@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Quiz</title>
-    <link rel="stylesheet" type="text/css" href="quiz.css">
-  </head>
-  <body>
-    <div class="container">
-      <h1>Bem-vindo(a) ao Quiz!</h1>
-      <p>Você tem 15 perguntas para responder. Boa sorte!</p>
-      <div id="quiz"></div>
-      <button id="submit">Enviar respostas</button>
-      <div id="results"></div>
-    </div>
-    <script src="quiz.js"></script>
-    <div id="creditos">Trabalho da ETEC de Sapopemba feito por Angelo e Miriã</div>
-  </body>
+<head>
+  <title>Responder Pessoas</title>
+</head>
+<body>
+  <h1>Responder Pessoas</h1>
+
+  <form id="chat-form">
+    <input type="text" id="user-input" placeholder="Digite sua pergunta" />
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="chat-log"></div>
+
+  <script src="index.js"></script>
+  <script>
+    const chatForm = document.getElementById('chat-form');
+    const userInput = document.getElementById('user-input');
+    const chatLog = document.getElementById('chat-log');
+
+    chatForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      
+      const userMessage = userInput.value;
+      userInput.value = '';
+
+      const response = await Completion.create(userMessage);
+      appendMessage('User', userMessage);
+      appendMessage('AI', response);
+    });
+
+    function appendMessage(role, content) {
+      const message = document.createElement('div');
+      message.className = role.toLowerCase();
+      message.innerHTML = `<strong>${role}:</strong> ${content}`;
+      chatLog.appendChild(message);
+    }
+  </script>
+</body>
 </html>
