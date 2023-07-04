@@ -5,14 +5,31 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     h1 {
       text-align: center;
+      margin-top: 20px;
+    }
+
+    #chat-form {
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    #user-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
     }
 
     #chat-log {
-      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #ffffff;
     }
 
     .user {
@@ -27,6 +44,24 @@
     .loading {
       color: #FFA500;
       font-style: italic;
+    }
+
+    @media only screen and (min-width: 600px) {
+      #chat-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #user-input {
+        width: 80%;
+        margin-right: 10px;
+      }
+
+      #chat-log {
+        max-width: 800px;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
