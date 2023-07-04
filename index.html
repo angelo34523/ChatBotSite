@@ -2,6 +2,33 @@
 <html>
 <head>
   <title>Responder Pessoas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    #chat-log {
+      margin-bottom: 20px;
+    }
+
+    .user {
+      color: #0000FF;
+    }
+
+    .ai {
+      color: #008000;
+      font-weight: bold;
+    }
+
+    .loading {
+      color: #FFA500;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
   <h1>Responder Pessoas</h1>
@@ -38,7 +65,7 @@
         };
       }
 
-      const endpoint = "https://gpt4.gravityengine.cc/api/openai/v1/chat/completions";
+      const endpoint = "https://chat-aim.vercel.app/api/openai/v1/chat/completions";
       const headers = {
         "Content-Type": "application/json",
       };
@@ -62,6 +89,13 @@
       }
     }
 
+    function appendMessage(role, content) {
+      const message = document.createElement('div');
+      message.className = role.toLowerCase();
+      message.innerHTML = `<strong>${role}:</strong> ${content}`;
+      document.getElementById('chat-log').appendChild(message);
+    }
+
     document.getElementById('chat-form').addEventListener('submit', async (event) => {
       event.preventDefault();
 
@@ -69,17 +103,14 @@
       const userMessage = userInput.value;
       userInput.value = '';
 
-      const response = await createCompletion(userMessage);
       appendMessage('User', userMessage);
-      appendMessage('AI', response);
-    });
+      appendMessage('AI', '<span class="loading">Gerando resposta...</span>');
 
-    function appendMessage(role, content) {
-      const message = document.createElement('div');
-      message.className = role.toLowerCase();
-      message.innerHTML = `<strong>${role}:</strong> ${content}`;
-      document.getElementById('chat-log').appendChild(message);
-    }
+      const response = await createCompletion(userMessage);
+      document.querySelector('#chat-log .ai:last-child').innerHTML = response.replace(/\n/g, '<br><br>');
+      const loadingMessage = document.querySelector('#chat-log .loading');
+      loadingMessage.parentNode.removeChild(loadingMessage);
+    });
   </script>
 </body>
 </html>
