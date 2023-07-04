@@ -160,7 +160,7 @@
       loadingMessage.parentNode.removeChild(loadingMessage);
 
       userInput.disabled = false; // Enable the input field
-      submitButton.disabled = userInput.value.trim() === ''; // Disable the submit button if the user input is empty or contains only whitespace
+      submitButton.disabled = true; // Disable the submit button again
       userInput.focus(); // Set focus back to the input field
     });
 
