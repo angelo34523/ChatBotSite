@@ -148,7 +148,7 @@
       const userMessage = userInput.value;
       userInput.value = '';
 
-      userInput.disabled = true;
+      userInput.disabled = userMessage.trim() !== ''; // Disable the input field if the user message is not empty
       appendMessage('User', userMessage);
       appendMessage('AI', '<span class="loading">Gerando resposta...</span>');
 
@@ -157,8 +157,8 @@
       const loadingMessage = document.querySelector('#chat-log .loading');
       loadingMessage.parentNode.removeChild(loadingMessage);
 
-      userInput.disabled = false;
-      userInput.focus();
+      userInput.disabled = false; // Enable the input field
+      userInput.focus(); 
     });
   </script>
 </body>
