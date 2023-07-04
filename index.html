@@ -13,19 +13,63 @@
 
   <div id="chat-log"></div>
 
-  <script src="index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
   <script>
-    const chatForm = document.getElementById('chat-form');
-    const userInput = document.getElementById('user-input');
-    const chatLog = document.getElementById('chat-log');
+    async function createCompletion(prompt, history = null) {
+      let data;
 
-    chatForm.addEventListener('submit', async (event) => {
+      if (history === null) {
+        data = {
+          model: "gpt-3.5-turbo-16k-0613",
+          temperature: 0.75,
+          messages: [
+            { role: "system", content: prompt },
+          ],
+        };
+      } else {
+        data = {
+          model: "gpt-3.5-turbo-16k-0613",
+          temperature: 0.75,
+          messages: [
+            { role: "system", content: prompt },
+            ...history,
+          ],
+        };
+      }
+
+      const endpoint = "https://gpt4.gravityengine.cc/api/openai/v1/chat/completions";
+      const headers = {
+        "Content-Type": "application/json",
+      };
+      const maxTokens = _.random(400, 1000);
+      const temperature = _.random(1, 5) / 10;
+      const completionData = {
+        prompt: prompt,
+        max_tokens: maxTokens,
+        temperature: temperature
+      };
+
+      try {
+        const response = await axios.post(endpoint, data, { headers: headers });
+        const response_data = response.data;
+        const choices = response_data.choices;
+        if (choices.length > 0) {
+          return choices[0].message.content;
+        }
+      } catch (error) {
+        console.log("Error making the request:", error);
+      }
+    }
+
+    document.getElementById('chat-form').addEventListener('submit', async (event) => {
       event.preventDefault();
-      
+
+      const userInput = document.getElementById('user-input');
       const userMessage = userInput.value;
       userInput.value = '';
 
-      const response = await Completion.create(userMessage);
+      const response = await createCompletion(userMessage);
       appendMessage('User', userMessage);
       appendMessage('AI', response);
     });
@@ -34,7 +78,7 @@
       const message = document.createElement('div');
       message.className = role.toLowerCase();
       message.innerHTML = `<strong>${role}:</strong> ${content}`;
-      chatLog.appendChild(message);
+      document.getElementById('chat-log').appendChild(message);
     }
   </script>
 </body>
