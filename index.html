@@ -79,7 +79,7 @@
   <h1>Responder Pessoas</h1>
 
   <form id="chat-form">
-    <input type="text" id="user-input" placeholder="Digite sua pergunta" disabled />
+    <input type="text" id="user-input" placeholder="Digite sua pergunta" />
     <button type="submit" disabled>Enviar</button>
   </form>
 
@@ -148,7 +148,9 @@
       const userMessage = userInput.value;
       userInput.value = '';
 
-      userInput.disabled = userMessage.trim() !== ''; // Disable the input field if the user message is not empty
+      userInput.disabled = true; // Disable the input field
+      const submitButton = document.querySelector('#chat-form button[type="submit"]');
+      submitButton.disabled = true; // Disable the submit button
       appendMessage('User', userMessage);
       appendMessage('AI', '<span class="loading">Gerando resposta...</span>');
 
@@ -158,6 +160,7 @@
       loadingMessage.parentNode.removeChild(loadingMessage);
 
       userInput.disabled = false; // Enable the input field
+      submitButton.disabled = userInput.value.trim() === ''; // Disable the submit button if the user input is empty or contains only whitespace
       userInput.focus(); // Set focus back to the input field
     });
 
