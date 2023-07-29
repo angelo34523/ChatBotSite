@@ -3,150 +3,147 @@
 <head>
 <title>ChatBot Site</title>
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    overflow: hidden;
-    background-color: #f0f2f5;
-  }
-
-  h1 {
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  /* Ajustes para o chat */
-  #chat-log {
-    padding: 20px;
-    max-height: calc(100vh - 180px);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 60px; /* Margem superior para afastar o chat da parte superior */
-  }
-
-  .user,
-  .ai {
-    display: flex;
-    align-items: flex-start;
-    width: fit-content;
-    max-width: 70%;
-  }
-
-  .user img,
-  .ai img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 12px;
-  }
-
-  .user .message-content,
-  .ai .message-content {
-    padding: 16px;
-    border-radius: 20px;
-    word-wrap: break-word;
-  }
-
-  .user .message-content {
-    background-color: #dcf8c6;
-    color: #000;
-    align-self: flex-end;
-  }
-
-  .ai .message-content {
-    background-color: #fff;
-    color: #000;
-    align-self: flex-end;
-  }
-
-  .ai {
-    margin-left: auto; 
-  }
-
-  .ai img {
-    margin-left: 12px;
-    margin-right: 0;
-  }
-
-  .loading {
-    color: #FFA500;
-    font-style: italic;
-  }
-
-  .ai p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  @media only screen and (min-width: 600px) {
-    #chat-form {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap; /* Quebra a linha quando não couberem na mesma linha */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #f0f2f5;
     }
 
-    #user-input {
-      width: 80%;
-      margin-right: 10px;
-      font-size: 16px;
+    h1 {
+      text-align: center;
+      margin-top: 20px;
     }
 
     #chat-log {
-      max-width: 800px;
-      margin: 0 auto;
+      padding: 20px;
+      max-height: calc(100vh - 180px);
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .user,
+    .ai {
+      display: flex;
+      align-items: flex-start;
+      width: fit-content;
+      max-width: 70%;
+    }
+
+    .user img,
+    .ai img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+
+    .user .message-content,
+    .ai .message-content {
+      padding: 16px;
+      border-radius: 20px;
+      word-wrap: break-word;
+    }
+
+    .user .message-content {
+      background-color: #dcf8c6;
+      color: #000;
+      align-self: flex-end;
+    }
+
+    .ai .message-content {
+      background-color: #fff;
+      color: #000;
+      align-self: flex-end;
+    }
+
+    .ai {
+      margin-left: auto; 
+    }
+
+    .ai img {
+      margin-left: 12px;
+      margin-right: 0;
+    }
+
+    .loading {
+      color: #FFA500;
+      font-style: italic;
     }
 
     .ai p {
-      font-size: 18px;
-      line-height: 1.6;
+      font-size: 16px;
+      line-height: 1.5;
     }
 
-    #clear-button,
+    @media only screen and (min-width: 600px) {
+      #chat-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #user-input {
+        width: 80%;
+        margin-right: 10px;
+        font-size: 16px;
+      }
+
+      #chat-log {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .ai p {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+    }
+
+    #fixed-chat-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-top: 1px solid #ddd;
+      display: flex;
+    }
+
+    #user-input {
+      width: calc(100% - 100px);
+      padding: 16px;
+      margin-right: 10px;
+      box-sizing: border-box;
+      border: none;
+      border-radius: 50px;
+      background-color: #fff;
+    }
+
     button[type="submit"] {
-      width: 200px; /* Define uma largura fixa para os botões */
+      padding: 16px 30px;
+      background-color: #7289da;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
     }
-  }
-
-  #fixed-chat-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-top: 1px solid #ddd;
-    display: flex;
-  }
-
-  #user-input {
-    width: calc(100% - 100px);
-    padding: 16px;
-    margin-right: 10px;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 50px;
-    background-color: #fff;
-  }
-
-  /* Estilo para ambos os botões */
-  button[type="submit"],
-  #clear-button {
-    padding: 16px 30px;
-    background-color: #7289da;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-  }
-
-  #clear-button {
-    margin-right: 20px; /* Espaço entre o botão "Limpar" e o botão "Enviar" */
-  }
+  </style>
+</head>
+<body>
+  <h1>ChatBot Site</h1>
+  <div id="chat-log"></div>
+  <div id="fixed-chat-container">
+    <form id="chat-form">
+      <input type="text" id="user-input" placeholder="Digite sua pergunta" />
+      <button type="submit" id="send-button" disabled>Enviar</button>
+    </form>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
   <script>
@@ -279,11 +276,6 @@
       sendMessage(userMessage);
 
       document.getElementById('send-button').setAttribute('disabled', 'disabled');
-    });
-
-  document.getElementById('clear-button').addEventListener('click', () => {
-    const chatLog = document.getElementById('chat-log');
-    chatLog.innerHTML = '';
     });
 
   </script>
