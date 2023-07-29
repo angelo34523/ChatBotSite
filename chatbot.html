@@ -133,11 +133,28 @@
       border-radius: 50px;
       cursor: pointer;
     }
+
+    #chat-container {
+      position: fixed;
+      bottom: 80px; /* Adjust this value to position the chat log higher or lower */
+      left: 0;
+      width: 100%;
+      max-height: calc(100vh - 300px); /* Adjust this value to control the maximum height of the chat log */
+      background-color: #f0f2f5;
+      padding: 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+        
   </style>
 </head>
 <body>
   <h1>ChatBot Site</h1>
-  <div id="chat-log"></div>
+  <div id="chat-container">
+    <div id="chat-log"></div>
+  </div>
   <div id="fixed-chat-container">
     <form id="chat-form">
       <input type="text" id="user-input" placeholder="Digite sua pergunta" />
