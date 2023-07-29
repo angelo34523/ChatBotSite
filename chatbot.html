@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ChatBot Site</title>
-<style>
+  <title>ChatBot Site</title>
+  <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -17,9 +17,14 @@
       margin-top: 20px;
     }
 
-    #chat-log {
+    #chat-container {
+      position: fixed;
+      bottom: 80px;
+      left: 0;
+      width: 100%;
+      max-height: calc(100vh - 300px);
+      background-color: #f0f2f5;
       padding: 20px;
-      max-height: calc(100vh - 180px);
       overflow-y: auto;
       display: flex;
       flex-direction: column;
@@ -62,7 +67,7 @@
     }
 
     .ai {
-      margin-left: auto; 
+      margin-left: auto;
     }
 
     .ai img {
@@ -133,21 +138,6 @@
       border-radius: 50px;
       cursor: pointer;
     }
-
-    #chat-container {
-      position: fixed;
-      bottom: 80px; /* Adjust this value to position the chat log higher or lower */
-      left: 0;
-      width: 100%;
-      max-height: calc(100vh - 300px); /* Adjust this value to control the maximum height of the chat log */
-      background-color: #f0f2f5;
-      padding: 20px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-        
   </style>
 </head>
 <body>
