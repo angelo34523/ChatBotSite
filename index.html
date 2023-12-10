@@ -1,85 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NovaIA - Inteligência Artificial para Programadores</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #008080;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    
-    header {
-      background-color: #000;
-      padding: 20px;
-      text-align: center;
-    }
-    
-    header h1 {
-      font-size: 36px;
-      margin: 0;
-    }
-    
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      padding: 20px;
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .container img {
-      width: 200px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-    }
-    
-    .container p {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    
-    .container a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 20px;
-      padding: 10px;
-      border: 1px solid #fff;
-      border-radius: 5px;
-    }
-    
-    .container a:hover {
-      background-color: #fff;
-      color: #008080;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>NovaIA - A Inteligência Artificial para Programadores</title>
+    <style>
+        body {
+            background-color: #008080;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .link {
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+            border: 2px solid white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .link:hover {
+            background-color: white;
+            color: #008080;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>NovaIA</h1>
-  </header>
-
-  <div class="container">
-    <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="Logo NovaIA">
-    <p>NovaIA é uma inteligência artificial para programadores e entusiastas de programação.</p>
-    <p>Para interagir com a NovaIA, acesse:</p>
-    <a href="https://github.com/NovaIAs/NovaIA">Github</a>
-    <a href="https://t.me/Nova_IABot">Telegram</a>
-    <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8">Discord</a>
-    <a href="https://gitlab.com/Nova-IA/NovaIA">Gitlab</a>
-    <p>Em breve, estaremos disponíveis em outras plataformas.</p>
-  </div>
-
-  <script>
-    const date = new Date();
-    const lastUpdate = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-    document.write(`<footer>Última atualização: ${lastUpdate}</footer>`);
-  </script>
+    <div class="container">
+        <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="NovaIA Logo">
+        <h1>Bem-vindo à NovaIA - A Inteligência Artificial para Programadores</h1>
+        <p>Este site é criado automaticamente pela NovaIA e é constantemente atualizado. Por favor, esteja ciente de que erros podem ocorrer.</p>
+        <p>A NovaIA é uma IA disponível em diversas plataformas, incluindo:</p>
+        <ul>
+            <li><a href="https://github.com/NovaIAs/NovaIA" class="link">Github</a></li>
+            <li><a href="https://t.me/Nova_IABot" class="link">Telegram</a></li>
+            <li><a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" class="link">Discord</a></li>
+            <li><a href="https://gitlab.com/Nova-IA/NovaIA" class="link">Gitlab</a></li>
+        </ul>
+        <p>A NovaIA foi criada com o objetivo de ser uma IA focada em programação, atendendo a programadores e usuários interessados em programação.</p>
+        <p>No Github e Gitlab, a NovaIA mantém um repositório enorme, onde ela cria novos códigos regularmente. Já no Telegram e Discord, ela funciona como um ChatBot com o qual você pode conversar sobre programação!</p>
+        <p>Data da última atualização: 2023-12-10 18:27:42</p>
+    </div>
 </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        setInterval(updateLastUpdate, 1000);
+    });
+
+    function updateLastUpdate() {
+        var currentDateTime = new Date();
+        var formattedDateTime = currentDateTime.toISOString().slice(0, 19).replace("T", " ");
+        document.querySelector("p").innerText = "Data da última atualização: " + formattedDateTime;
+    }
+</script>
