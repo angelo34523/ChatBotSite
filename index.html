@@ -1,50 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaIA - A Inteligência Artificial para Programadores</title>
     <style>
         body {
+            background-color: #008080;
+            color: #ffffff;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #008080;
-            color: #fff;
         }
 
-        header {
-            background-color: #000;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            text-align: center;
         }
 
         h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
         }
 
         p {
-            margin: 20px 0;
             font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 10px;
         }
 
-        img {
-            width: 100%;
-            max-width: 400px;
-            display: block;
-            margin: 20px auto;
+        .image {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        @media only screen and (max-width: 600px) {
+        .image img {
+            max-width: 100%;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
             h1 {
-                font-size: 20px;
+                font-size: 24px;
             }
 
             p {
@@ -54,22 +67,29 @@
     </style>
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>NovaIA - A Inteligência Artificial para Programadores</h1>
-    </header>
+        
+        <div class="image">
+            <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="Imagem da NovaIA">
+        </div>
 
-    <main>
-        <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="Imagem da NovaIA">
+        <p>A NovaIA é uma inteligência artificial focada em programação. Ela está presente em diversas plataformas, como:</p>
 
-        <p>A NovaIA é uma inteligência artificial desenvolvida para auxiliar programadores e qualquer usuário interessado em programação. Ela está disponível em diversas plataformas, como o GitHub, Telegram, Discord e GitLab.</p>
+        <div class="links">
+            <a href="https://github.com/NovaIAs/NovaIA" target="_blank">Github</a>
+            <a href="https://t.me/Nova_IABot" target="_blank">Telegram</a>
+            <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" target="_blank">Discord</a>
+            <a href="https://gitlab.com/Nova-IA/NovaIA" target="_blank">Gitlab</a>
+        </div>
 
-        <p>No GitHub (https://github.com/NovaIAs/NovaIA) e GitLab (https://gitlab.com/Nova-IA/NovaIA), a NovaIA funciona como um repositório gigante, criando novos códigos periodicamente. Você pode explorar esses códigos para se inspirar ou utilizar em seus projetos.</p>
+        <p>No Github e Gitlab, a NovaIA mantém um repositório enorme de códigos que são criados automaticamente em intervalos regulares. Esses códigos podem ser utilizados por programadores para obter inspiração ou até mesmo como base para seus próprios projetos.</p>
 
-        <p>No Telegram (https://t.me/Nova_IABot) e Discord (https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8), a NovaIA atua como um ChatBot. Você pode conversar com ela sobre programação, tirar dúvidas, pedir sugestões ou até mesmo bater um papo sobre o assunto.</p>
+        <p>No Telegram e Discord, a NovaIA atua como um ChatBot que você pode conversar sobre programação. Ela está pronta para responder perguntas, fornecer informações e auxiliar em problemas e dúvidas relacionadas à programação.</p>
 
-        <p>A NovaIA é constantemente atualizada, portanto, é importante destacar que podem ocorrer erros em suas respostas ou comportamentos. Ela está em constante evolução para proporcionar uma experiência cada vez melhor aos usuários.</p>
-
-        <p>Experimente a NovaIA e aproveite todo o potencial dessa incrível inteligência artificial voltada para programadores!</p>
-    </main>
+        <p>Fique atento, pois o site da NovaIA é criado automaticamente e está em constante atualização. Por conta disso, podem ocorrer erros ocasionalmente.</p>
+        
+        <p>Última atualização: 2023-12-10 17:19:56</p>
+    </div>
 </body>
 </html>
