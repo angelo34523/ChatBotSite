@@ -1,90 +1,117 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NovaIA</title>
-  <style>
-    body {
-      background-color: #008080;
-      font-family: Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaIA - A IA para programadores</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+        body {
+            background-color: #008080;
+            color: white;
+        }
 
-    h1 {
-      color: white;
-      text-align: center;
-      margin-bottom: 40px;
-    }
+        header {
+            padding: 20px;
+            text-align: center;
+        }
 
-    p {
-      color: white;
-      margin-bottom: 20px;
-    }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
 
-    .logo {
-      display: block;
-      max-width: 300px;
-      margin: 0 auto;
-    }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
 
-    .links {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
-    }
+        .image-container {
+            text-align: center;
+        }
 
-    .links a {
-      margin: 0 10px;
-    }
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
 
-    @media only screen and (max-width: 600px) {
-      h1 {
-        font-size: 24px;
-      }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
 
-      .logo {
-        max-width: 200px;
-      }
+        .buttons a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #ffffff;
+            color: #008080;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
 
-      .links {
-        flex-direction: column;
-        align-items: center;
-      }
+        .buttons a:hover {
+            background-color: #008080;
+            color: #ffffff;
+        }
 
-      .links a {
-        margin: 10px 0;
-      }
-    }
-  </style>
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            color: #008080;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .image-container img {
+                width: 200px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-    <h1>NovaIA</h1>
-    <img class="logo" src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="Logo NovaIA">
-    <p>Seja bem-vindo ao site da NovaIA, uma inteligência artificial focada em programação!</p>
-    <p>A NovaIA está presente em diversas plataformas:</p>
-    <ul>
-      <li>No <a href="https://github.com/NovaIAs/NovaIA" target="_blank">Github</a>, onde mantemos um repositório com códigos gerados pela IA;</li>
-      <li>No <a href="https://t.me/Nova_IABot" target="_blank">Telegram</a> e <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" target="_blank">Discord</a>, onde você pode conversar com a IA sobre programação;</li>
-      <li>No <a href="https://gitlab.com/Nova-IA/NovaIA" target="_blank">Gitlab</a>, também com um repositório de códigos gerados pela IA.</li>
-    </ul>
-    <p>O site que você está visitando foi criado automaticamente pela NovaIA e é constantemente atualizado. Portanto, erros podem ocorrer.</p>
-    <p>Data da última atualização: 2023-12-10 18:08:54</p>
-    <div class="links">
-      <a href="https://github.com/NovaIAs/NovaIA" target="_blank">Github</a>
-      <a href="https://t.me/Nova_IABot" target="_blank">Telegram</a>
-      <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" target="_blank">Discord</a>
-      <a href="https://gitlab.com/Nova-IA/NovaIA" target="_blank">Gitlab</a>
+    <header>
+        <h1>NovaIA - A IA para programadores</h1>
+        <p>Conheça a NovaIA, uma inteligência artificial criada para auxiliar programadores e entusiastas da programação.</p>
+    </header>
+
+    <div class="image-container">
+        <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="Imagem da NovaIA">
     </div>
-  </div>
+
+    <div class="buttons">
+        <a href="https://github.com/NovaIAs/NovaIA" target="_blank">Github</a>
+        <a href="https://t.me/Nova_IABot" target="_blank">Telegram</a>
+        <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8"
+            target="_blank">Discord</a>
+        <a href="https://gitlab.com/Nova-IA/NovaIA" target="_blank">Gitlab</a>
+    </div>
+
+    <footer>
+        <p>Este site foi criado automaticamente pela NovaIA e está em constante atualização. Erros podem ocorrer.</p>
+        <p>Última atualização: 2023-12-10 18:10:42</p>
+    </footer>
 </body>
 
 </html>
