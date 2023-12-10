@@ -1,100 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaIA - Inteligência Artificial para Programadores</title>
-    <link rel="stylesheet" href="styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NovaIA - Inteligência Artificial para Programadores</title>
+	<style>
+		/* CSS para desktop */
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+			background-color: #008080;
+			color: #fff;
+		}
+
+		h1 {
+			font-size: 3rem;
+			margin-bottom: 2rem;
+		}
+
+		p {
+			font-size: 1.2rem;
+			margin-bottom: 1rem;
+			text-align: center;
+		}
+
+		.button {
+			display: inline-block;
+			padding: 1rem 2rem;
+			background-color: #fff;
+			color: #008080;
+			font-size: 1.2rem;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: background-color 0.3s ease;
+		}
+
+		.button:hover {
+			background-color: #00bfbf;
+			color: #fff;
+		}
+
+		/* CSS para mobile */
+		@media (max-width: 768px) {
+			h1 {
+				font-size: 2.5rem;
+			}
+
+			p {
+				font-size: 1rem;
+			}
+
+			.button {
+				padding: 0.8rem 1.6rem;
+				font-size: 1rem;
+			}
+		}
+	</style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="NovaIA Logo">
-            </div>
-            <ul class="menu">
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#github">GitHub</a></li>
-                <li><a href="#telegram">Telegram</a></li>
-                <li><a href="#discord">Discord</a></li>
-                <li><a href="#gitlab">GitLab</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+	<div class="container">
+		<h1>NovaIA - Inteligência Artificial para Programadores</h1>
+		<p>A NovaIA é uma inteligência artificial focada em programadores e usuários interessados em programação. Com ela, você pode encontrar novos códigos, conversar sobre programação e muito mais!</p>
+		<p>Confira onde você pode encontrar a NovaIA:</p>
+		<ul>
+			<li><a href="https://github.com/NovaIAs/NovaIA" class="button">Github</a></li>
+			<li><a href="https://t.me/Nova_IABot" class="button">Telegram</a></li>
+			<li><a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" class="button">Discord</a></li>
+			<li><a href="https://gitlab.com/Nova-IA/NovaIA" class="button">Gitlab</a></li>
+		</ul>
+		<p>Este site foi criado automaticamente pela NovaIA e é atualizado constantemente. Portanto, podem ocorrer erros. A última atualização ocorreu em 10 de dezembro de 2023 às 18:19:06.</p>
+	</div>
+	<script>
+		// Script para mostrar a data da última atualização
+		const lastUpdated = new Date('2023-12-10T18:19:06');
+		const formattedDate = lastUpdated.toLocaleString('pt-BR');
 
-    <section id="hero">
-        <h1>NovaIA - Inteligência Artificial para Programadores</h1>
-        <h2>Desenvolva suas habilidades de programação com a NovaIA</h2>
-        <a href="#about" class="btn">Saiba Mais</a>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2>Sobre a NovaIA</h2>
-            <p>A NovaIA é uma inteligência artificial que está presente em várias plataformas, incluindo GitHub, Telegram, Discord e GitLab. Ela foi criada com o objetivo de auxiliar programadores e qualquer usuário interessado em programação.</p>
-            <p>No GitHub e GitLab, a NovaIA funciona como um repositório gigante, criando novos códigos periodicamente. No Telegram e Discord, ela atua como um ChatBot, proporcionando conversas interativas sobre programação.</p>
-            <p>Este site foi criado automaticamente pela NovaIA e é atualizado constantemente. Por isso, podem ocorrer erros durante a navegação.</p>
-            <p>Experimente interagir com a NovaIA e descubra como ela pode te ajudar no mundo da programação!</p>
-        </div>
-    </section>
-
-    <section id="github">
-        <div class="container">
-            <h2>NovaIA no GitHub</h2>
-            <p>A NovaIA tem um perfil no GitHub onde ela cria e compartilha novos códigos de forma automática. O repositório é constantemente atualizado com novas contribuições da inteligência artificial.</p>
-            <p>Confira os projetos da NovaIA no GitHub e inspire-se com as criações da IA!</p>
-            <a href="https://github.com/NovaIAs/NovaIA" class="btn">Visitar o GitHub</a>
-        </div>
-    </section>
-
-    <section id="telegram">
-        <div class="container">
-            <h2>NovaIA no Telegram</h2>
-            <p>No Telegram, a NovaIA está disponível como um ChatBot. Você pode conversar com ela sobre programação, fazer perguntas, receber dicas e muito mais!</p>
-            <p>Acesse o link abaixo para adicionar a NovaIA ao seu Telegram e aproveite todas as funcionalidades que ela oferece.</p>
-            <a href="https://t.me/Nova_IABot" class="btn">Adicionar ao Telegram</a>
-        </div>
-    </section>
-
-    <section id="discord">
-        <div class="container">
-            <h2>NovaIA no Discord</h2>
-            <p>No Discord, a NovaIA também está disponível como um ChatBot. Junte-se ao servidor da NovaIA e aproveite para interagir com outros programadores, receber suporte e tirar suas dúvidas.</p>
-            <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" class="btn">Junte-se ao Discord</a>
-        </div>
-    </section>
-
-    <section id="gitlab">
-        <div class="container">
-            <h2>NovaIA no GitLab</h2>
-            <p>A NovaIA também possui um perfil no GitLab, onde você pode encontrar diversos projetos desenvolvidos pela inteligência artificial.</p>
-            <p>Acesse o link abaixo e explore os repositórios da NovaIA no GitLab.</p>
-            <a href="https://gitlab.com/Nova-IA/NovaIA" class="btn">Visitar o GitLab</a>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            <p>Se você tiver alguma dúvida, sugestão ou quiser saber mais sobre a NovaIA, entre em contato conosco através do formulário abaixo.</p>
-            <form>
-                <label for="name">Nome:</label>
-                <input type="text" id="name">
-
-                <label for="email">E-mail:</label>
-                <input type="email" id="email">
-
-                <label for="message">Mensagem:</label>
-                <textarea id="message"></textarea>
-
-                <input type="submit" value="Enviar" class="btn">
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2023 NovaIA - Atualizado em 10 de Dezembro de 2023</p>
-    </footer>
+		const p = document.createElement('p');
+		p.innerText = `Última atualização: ${formattedDate}`;
+		document.body.appendChild(p);
+	</script>
 </body>
 </html>
