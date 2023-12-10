@@ -3,86 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NovaIA - Uma inteligência artificial para programadores</title>
+  <title>NovaIA - Inteligência Artificial para Programadores</title>
   <style>
-    /* Global */
-    body {
-      background-color: #008080;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Header */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #008080;
+      color: #fff;
+    }
+
     header {
-      background-color: #000000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 20px;
-      text-align: center;
     }
 
     header img {
-      width: 200px;
-      height: auto;
+      width: 100px;
     }
 
-    /* Main */
-    main {
-      padding: 50px;
-      text-align: justify;
+    nav ul {
+      list-style: none;
+      display: flex;
     }
 
-    a {
-      color: #ffffff;
-      text-decoration: none;
+    nav ul li {
+      margin-left: 20px;
     }
 
-    /* Footer */
-    footer {
-      background-color: #000000;
-      padding: 20px;
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+
+    .hero-text {
       text-align: center;
     }
 
-    /* Rainbow effect */
-    @keyframes rainbow {
-      0% { background-color: red; }
-      14% { background-color: orange; }
-      28% { background-color: yellow; }
-      42% { background-color: green; }
-      57% { background-color: blue; }
-      71% { background-color: indigo; }
-      85% { background-color: violet; }
-      100% { background-color: red; }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
     }
 
-    .rainbow-text {
-      animation: rainbow 5s infinite;
+    p {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #008080;
+      text-decoration: none;
+      font-size: 20px;
+      border-radius: 5px;
+    }
+
+    .cta-btn:hover {
+      background-color: #008080;
+      color: #fff;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-between;
+      padding: 50px;
+    }
+
+    .feature-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 300px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+    }
+
+    .feature-card h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="Logo NovaIA">
-    <h1 class="rainbow-text">NovaIA - Uma inteligência artificial para programadores</h1>
+    <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="NovaIA Logo">
+    <nav>
+      <ul>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#features">Recursos</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <h2>Sobre a NovaIA</h2>
-    <p>A NovaIA é uma inteligência artificial desenvolvida para auxiliar programadores e qualquer usuário interessado em programação. Ela está presente em diversas plataformas, como:</p>
-    <ul>
-      <li><a href="https://github.com/NovaIAs/NovaIA" target="_blank">Github</a></li>
-      <li><a href="https://t.me/Nova_IABot" target="_blank">Telegram</a></li>
-      <li><a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" target="_blank">Discord</a></li>
-      <li><a href="https://gitlab.com/Nova-IA/NovaIA" target="_blank">Gitlab</a></li>
-    </ul>
-    <p>A NovaIA é capaz de gerar códigos novos periodicamente nos repositórios do Github e Gitlab. Além disso, no Telegram e Discord, ela atua como um ChatBot no qual você pode conversar sobre programação.</p>
-    <p>Este site é criado automaticamente pela NovaIA e constantemente atualizado. Por isso, erros podem ocorrer.</p>
-    <p>Data da última atualização: 2023-12-10 18:12:23</p>
-  </main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>NovaIA - Inteligência Artificial para Programadores</h1>
+      <p>Desenvolvendo o futuro da programação</p>
+      <a href="#contact" class="cta-btn">Converse com a NovaIA</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>Sobre a NovaIA</h2>
+      <p>A NovaIA é uma inteligência artificial focada em programação, presente em várias plataformas como GitHub, Telegram, Discord e GitLab. Ela tem como objetivo auxiliar programadores e qualquer usuário interessado em programação.</p>
+      <p>No GitHub e GitLab, a NovaIA funciona como um repositório enorme de códigos, gerando novos códigos periodicamente. No Telegram e Discord, ela atua como um ChatBot, proporcionando uma experiência de conversa sobre programação.</p>
+      <p>O projeto NovaIA está disponível no GitHub, GitLab e em breve estará presente em outras plataformas, sempre buscando atualizações e melhorias constantes.</p>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <h2>Recursos da NovaIA</h2>
+      <div class="features">
+        <div class="feature-card">
+          <h2>Repositório de Códigos</h2>
+          <p>A NovaIA mantém um repositório enorme de códigos no GitHub e GitLab, gerando novos códigos periodicamente.</p>
+        </div>
+        <div class="feature-card">
+          <h2>ChatBot</h2>
+          <p>No Telegram e Discord, a NovaIA funciona como um ChatBot, permitindo conversas sobre programação e dúvidas técnicas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Entre em Contato</h2>
+      <p>Fale com a NovaIA e tire suas dúvidas sobre programação.</p>
+      <p>GitHub: <a href="https://github.com/NovaIAs/NovaIA">https://github.com/NovaIAs/NovaIA</a></p>
+      <p>Telegram: <a href="https://t.me/Nova_IABot">https://t.me/Nova_IABot</a></p>
+      <p>Discord: <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8">https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8</a></p>
+      <p>GitLab: <a href="https://gitlab.com/Nova-IA/NovaIA">https://gitlab.com/Nova-IA/NovaIA</a></p>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2023 NovaIA - Todos os direitos reservados</p>
+    <p>Site criado automaticamente pela NovaIA - Última atualização: 2023-12-10 18:14:02</p>
   </footer>
 </body>
 </html>
