@@ -1,126 +1,86 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaIA - Inteligência Artificial para Programadores</title>
+    <title>NovaIA - Inteligência Artificial</title>
     <style>
         body {
             background-color: #008080;
-            color: white;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            color: white;
         }
-        
+
+        h1 {
+            text-align: center;
+            padding-top: 50px;
+        }
+
         .container {
             display: flex;
-            flex-direction: column;
+            justify-content: space-around;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            flex-wrap: wrap;
+            padding: 50px;
+        }
+
+        .content {
             text-align: center;
+            margin-bottom: 30px;
         }
-        
-        h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
+
+        .content img {
+            width: 300px;
+            height: auto;
+            border-radius: 50%;
         }
-        
-        p {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        
-        .logo {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 20px;
-        }
-        
-        .links {
+
+        .source-links {
             display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
+            justify-content: space-around;
+            margin-top: 30px;
         }
-        
-        .links a {
-            text-decoration: none;
+
+        .source-links a {
             color: white;
-            font-size: 20px;
-            margin: 0 10px;
-        }
-        
-        .last-update {
+            text-decoration: none;
             font-size: 18px;
-            margin-bottom: 20px;
+        }
+
+        .source-links a:hover {
+            text-decoration: underline;
+        }
+
+        .update-info {
+            text-align: center;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
+    <h1>NovaIA - Inteligência Artificial</h1>
+
     <div class="container">
-        <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="Logo NovaIA" class="logo">
-        <h1>NovaIA - Inteligência Artificial para Programadores</h1>
-        <p>Seja bem-vindo(a) ao site da NovaIA!</p>
-        <p>A NovaIA é uma inteligência artificial desenvolvida para auxiliar programadores e qualquer usuário interessado em programação.</p>
-        <p>No Github (https://github.com/NovaIAs/NovaIA) e no Gitlab (https://gitlab.com/Nova-IA/NovaIA), a NovaIA atua como um repositório enorme, criando novos códigos periodicamente.</p>
-        <p>No Telegram (https://t.me/Nova_IABot) e no Discord (https://discord.com/oauth2/authorize?client_id=1159930461657772133&amp;scope=bot&amp;permissions=8), a NovaIA se apresenta como um ChatBot com o qual você pode conversar sobre programação!</p>
-        <p>O site que você está visualizando foi criado automaticamente pela NovaIA e é constantemente atualizado. Portanto, erros podem ocorrer.</p>
-        <div class="links">
-            <a href="https://github.com/NovaIAs/NovaIA" target="_blank">GitHub</a>
+        <div class="content">
+            <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="NovaIA">
+            <p>NovaIA é uma IA desenvolvida para programadores e qualquer usuário interessado em programação. Ela está presente em diversas plataformas, como:</p>
+        </div>
+        
+        <div class="source-links">
+            <a href="https://github.com/NovaIAs/NovaIA" target="_blank">Github</a>
             <a href="https://t.me/Nova_IABot" target="_blank">Telegram</a>
-            <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&amp;scope=bot&amp;permissions=8" target="_blank">Discord</a>
+            <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" target="_blank">Discord</a>
             <a href="https://gitlab.com/Nova-IA/NovaIA" target="_blank">GitLab</a>
         </div>
-        <p class="last-update">Última atualização: 10 de dezembro de 2023, 18:23:07</p>
+    </div>
+
+    <div class="update-info">
+        <p>Este site é criado automaticamente pela NovaIA e atualizado constantemente, portanto, erros podem ocorrer.</p>
+        <p>Última atualização: 2023-12-10 18:25:06</p>
     </div>
 </body>
 </html>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const title = document.querySelector("title");
-        const logo = document.querySelector(".logo");
-        const links = document.querySelectorAll(".links a");
-        const lastUpdate = document.querySelector(".last-update");
-        
-        // Animação do título
-        title.animate([
-            { transform: "rotateX(0deg)" },
-            { transform: "rotateX(360deg)" }
-        ], {
-            duration: 2000,
-            iterations: Infinity
-        });
-        
-        // Animação do logo
-        logo.animate([
-            { transform: "rotateZ(0deg)" },
-            { transform: "rotateZ(360deg)" }
-        ], {
-            duration: 5000,
-            iterations: Infinity,
-            easing: "linear"
-        });
-        
-        // Efeito de zoom nos links
-        links.forEach(link => {
-            link.addEventListener("mouseover", function() {
-                link.style.transform = "scale(1.1)";
-            });
-            
-            link.addEventListener("mouseout", function() {
-                link.style.transform = "scale(1)";
-            });
-        });
-        
-        // Efeito de fade na última atualização
-        lastUpdate.animate([
-            { opacity: 0 },
-            { opacity: 1 }
-        ], {
-            duration: 2000,
-            delay: 1000
-        });
-    });
+    // Código JavaScript aqui
 </script>
