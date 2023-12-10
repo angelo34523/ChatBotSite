@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaIA - Inteligência Artificial para Programadores</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
     <style>
         body {
             background-color: #008080;
@@ -15,61 +13,114 @@
             padding: 0;
         }
         
-        header {
-            background-color: #000;
-            padding: 20px;
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
         }
         
-        header h1 {
-            font-size: 40px;
-            margin: 0;
-        }
-        
-        main {
-            padding: 20px;
-        }
-        
-        img {
-            max-width: 100%;
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
         }
         
         p {
-            font-size: 18px;
-            line-height: 1.5;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
         
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #000;
-            color: white;
+        .logo {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .links a {
             text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            margin-right: 10px;
-            transition: background-color 0.3s ease;
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
         }
         
-        .button:hover {
-            background-color: #555;
+        .last-update {
+            font-size: 18px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="container">
+        <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="Logo NovaIA" class="logo">
         <h1>NovaIA - Inteligência Artificial para Programadores</h1>
-    </header>
-    <main>
-        <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="Imagem da NovaIA">
-        <p>Bem-vindo ao site da NovaIA, uma inteligência artificial criada especialmente para programadores e entusiastas da programação. Nós estamos constantemente atualizando e aprimorando nosso sistema para fornecer as melhores soluções e ajudar você nas suas tarefas diárias.</p>
-        <p>A NovaIA está presente em diversas plataformas, como o Github, onde possui um repositório com códigos gerados automaticamente, o Telegram e o Discord, onde você pode conversar com ela sobre programação, e em breve estará disponível em outras plataformas.</p>
-        <p>Este site foi criado automaticamente pela NovaIA e é atualizado constantemente, portanto, podem ocorrer erros. Caso você encontre algum problema, por favor, nos informe para que possamos corrigir o mais rápido possível.</p>
-        <p>Confira abaixo os links para acessar a NovaIA:</p>
-        <a class="button" href="https://github.com/NovaIAs/NovaIA">Github</a>
-        <a class="button" href="https://t.me/Nova_IABot">Telegram</a>
-        <a class="button" href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8">Discord</a>
-        <a class="button" href="https://gitlab.com/Nova-IA/NovaIA">Gitlab</a>
-        <p>Data da última atualização: 2023-12-10 18:22:20</p>
-    </main>
+        <p>Seja bem-vindo(a) ao site da NovaIA!</p>
+        <p>A NovaIA é uma inteligência artificial desenvolvida para auxiliar programadores e qualquer usuário interessado em programação.</p>
+        <p>No Github (https://github.com/NovaIAs/NovaIA) e no Gitlab (https://gitlab.com/Nova-IA/NovaIA), a NovaIA atua como um repositório enorme, criando novos códigos periodicamente.</p>
+        <p>No Telegram (https://t.me/Nova_IABot) e no Discord (https://discord.com/oauth2/authorize?client_id=1159930461657772133&amp;scope=bot&amp;permissions=8), a NovaIA se apresenta como um ChatBot com o qual você pode conversar sobre programação!</p>
+        <p>O site que você está visualizando foi criado automaticamente pela NovaIA e é constantemente atualizado. Portanto, erros podem ocorrer.</p>
+        <div class="links">
+            <a href="https://github.com/NovaIAs/NovaIA" target="_blank">GitHub</a>
+            <a href="https://t.me/Nova_IABot" target="_blank">Telegram</a>
+            <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&amp;scope=bot&amp;permissions=8" target="_blank">Discord</a>
+            <a href="https://gitlab.com/Nova-IA/NovaIA" target="_blank">GitLab</a>
+        </div>
+        <p class="last-update">Última atualização: 10 de dezembro de 2023, 18:23:07</p>
+    </div>
 </body>
 </html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const title = document.querySelector("title");
+        const logo = document.querySelector(".logo");
+        const links = document.querySelectorAll(".links a");
+        const lastUpdate = document.querySelector(".last-update");
+        
+        // Animação do título
+        title.animate([
+            { transform: "rotateX(0deg)" },
+            { transform: "rotateX(360deg)" }
+        ], {
+            duration: 2000,
+            iterations: Infinity
+        });
+        
+        // Animação do logo
+        logo.animate([
+            { transform: "rotateZ(0deg)" },
+            { transform: "rotateZ(360deg)" }
+        ], {
+            duration: 5000,
+            iterations: Infinity,
+            easing: "linear"
+        });
+        
+        // Efeito de zoom nos links
+        links.forEach(link => {
+            link.addEventListener("mouseover", function() {
+                link.style.transform = "scale(1.1)";
+            });
+            
+            link.addEventListener("mouseout", function() {
+                link.style.transform = "scale(1)";
+            });
+        });
+        
+        // Efeito de fade na última atualização
+        lastUpdate.animate([
+            { opacity: 0 },
+            { opacity: 1 }
+        ], {
+            duration: 2000,
+            delay: 1000
+        });
+    });
+</script>
