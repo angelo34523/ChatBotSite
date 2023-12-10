@@ -1,92 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>NovaIA - Inteligência Artificial para Programadores</title>
-	<style>
-		/* CSS para desktop */
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-		}
-
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			min-height: 100vh;
-			background-color: #008080;
-			color: #fff;
-		}
-
-		h1 {
-			font-size: 3rem;
-			margin-bottom: 2rem;
-		}
-
-		p {
-			font-size: 1.2rem;
-			margin-bottom: 1rem;
-			text-align: center;
-		}
-
-		.button {
-			display: inline-block;
-			padding: 1rem 2rem;
-			background-color: #fff;
-			color: #008080;
-			font-size: 1.2rem;
-			text-decoration: none;
-			border-radius: 5px;
-			transition: background-color 0.3s ease;
-		}
-
-		.button:hover {
-			background-color: #00bfbf;
-			color: #fff;
-		}
-
-		/* CSS para mobile */
-		@media (max-width: 768px) {
-			h1 {
-				font-size: 2.5rem;
-			}
-
-			p {
-				font-size: 1rem;
-			}
-
-			.button {
-				padding: 0.8rem 1.6rem;
-				font-size: 1rem;
-			}
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaIA - Inteligência Artificial para Programadores</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="container">
-		<h1>NovaIA - Inteligência Artificial para Programadores</h1>
-		<p>A NovaIA é uma inteligência artificial focada em programadores e usuários interessados em programação. Com ela, você pode encontrar novos códigos, conversar sobre programação e muito mais!</p>
-		<p>Confira onde você pode encontrar a NovaIA:</p>
-		<ul>
-			<li><a href="https://github.com/NovaIAs/NovaIA" class="button">Github</a></li>
-			<li><a href="https://t.me/Nova_IABot" class="button">Telegram</a></li>
-			<li><a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" class="button">Discord</a></li>
-			<li><a href="https://gitlab.com/Nova-IA/NovaIA" class="button">Gitlab</a></li>
-		</ul>
-		<p>Este site foi criado automaticamente pela NovaIA e é atualizado constantemente. Portanto, podem ocorrer erros. A última atualização ocorreu em 10 de dezembro de 2023 às 18:19:06.</p>
-	</div>
-	<script>
-		// Script para mostrar a data da última atualização
-		const lastUpdated = new Date('2023-12-10T18:19:06');
-		const formattedDate = lastUpdated.toLocaleString('pt-BR');
-
-		const p = document.createElement('p');
-		p.innerText = `Última atualização: ${formattedDate}`;
-		document.body.appendChild(p);
-	</script>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="Logo da NovaIA">
+            </div>
+            <ul class="menu">
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#features">Recursos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <div class="container">
+                <h1 class="heading">NovaIA - Inteligência Artificial para Programadores</h1>
+                <p class="description">A NovaIA é uma inteligência artificial desenvolvida para auxiliar programadores e qualquer usuário interessado em programação. Ela está presente em diversas plataformas, como GitHub, Telegram, Discord e GitLab, e em breve estará disponível em outras.</p>
+                <p class="description">No GitHub e GitLab, a NovaIA funciona como um repositório gigantesco, onde ela cria novos códigos periodicamente. Já no Telegram e Discord, ela atua como um ChatBot com o qual você pode conversar sobre programação.</p>
+            </div>
+        </section>
+        <section id="features">
+            <div class="container">
+                <h2 class="heading">Recursos da NovaIA</h2>
+                <div class="feature">
+                    <img src="feature1.png" alt="Repositório de códigos">
+                    <h3>Repositório de Códigos</h3>
+                    <p>A NovaIA mantém um repositório enorme de códigos, que são gerados automaticamente e atualizados constantemente. Esses códigos podem servir como exemplos, inspiração ou até mesmo serem utilizados em projetos.</p>
+                </div>
+                <div class="feature">
+                    <img src="feature2.png" alt="ChatBot">
+                    <h3>ChatBot</h3>
+                    <p>Com a NovaIA no Telegram e Discord, você pode conversar sobre programação, tirar dúvidas, obter sugestões e até mesmo receber ajuda em projetos específicos. Ela está sempre pronta para interagir e auxiliar.</p>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <h2 class="heading">Entre em Contato</h2>
+                <p class="description">Para mais informações sobre a NovaIA ou para reportar algum problema encontrado, entre em contato através dos seguintes meios:</p>
+                <ul class="contact-list">
+                    <li><a href="https://github.com/NovaIAs/NovaIA" target="_blank">GitHub</a></li>
+                    <li><a href="https://t.me/Nova_IABot" target="_blank">Telegram</a></li>
+                    <li><a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" target="_blank">Discord</a></li>
+                    <li><a href="https://gitlab.com/Nova-IA/NovaIA" target="_blank">GitLab</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="footer-text">Este site é criado automaticamente pela NovaIA e atualizado constantemente. Erros podem ocorrer.</p>
+            <p class="footer-text">Última atualização: 2023-12-10 18:21:07</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
