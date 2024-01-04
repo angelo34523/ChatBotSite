@@ -1,64 +1,68 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Passarinhos Voando</title>
+  <title>IA sendo criada</title>
   <style>
     body {
-      background-color: #87CEEB;
-      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .passaro {
+    #canvas {
       position: absolute;
-      width: 50px;
-      height: 50px;
-      background-color: #FFD700;
-      border-radius: 50%;
-      animation: voar 5s infinite linear;
-    }
-
-    @keyframes voar {
-      0% {
-        top: 0px;
-        left: 0px;
-      }
-
-      25% {
-        top: 200px;
-        left: 200px;
-      }
-
-      50% {
-        top: 400px;
-        left: 400px;
-      }
-
-      75% {
-        top: 200px;
-        left: 600px;
-      }
-
-      100% {
-        top: 0px;
-        left: 800px;
-      }
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
 <body>
-  <div class="passaro"></div>
-  <div class="passaro"></div>
-  <div class="passaro"></div>
-  <div class="passaro"></div>
-  <div class="passaro"></div>
+  <canvas id="canvas"></canvas>
 
   <script>
-    // Cria novos pássaros a cada 2 segundos
-    setInterval(function() {
-      var passaro = document.createElement("div");
-      passaro.classList.add("passaro");
-      document.body.appendChild(passaro);
-    }, 2000);
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+
+    // Configurações da tela
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Variáveis para controlar a animação
+    var time = 0;
+    var speed = 0.01;
+
+    // Função para desenhar a IA
+    function draw() {
+      // Limpa a tela
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Desenha os fios
+      for (var i = 0; i < 100; i++) {
+        var x = Math.random() * canvas.width;
+        var y = Math.random() * canvas.height;
+        var dx = Math.sin(time + i * speed) * 10;
+        var dy = Math.cos(time + i * speed) * 10;
+
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + dx, y + dy);
+        ctx.strokeStyle = '#fff';
+        ctx.stroke();
+      }
+
+      // Atualiza o tempo
+      time += 0.01;
+
+      // Solicita ao navegador que chame a função draw novamente
+      requestAnimationFrame(draw);
+    }
+
+    // Inicia a animação
+    draw();
   </script>
 </body>
 </html>
+```
