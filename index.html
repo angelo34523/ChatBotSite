@@ -2,74 +2,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IA Sendo Criada</title>
-  <style>
-    body {
-      background-color: #000;
-    }
-
-    #canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+  <title>IA Google Gemini Pro</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="canvas"></canvas>
+  <h1>IA Google Gemini Pro</h1>
 
-  <script>
-    var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
+  <p>A IA Google Gemini Pro é uma plataforma de inteligência artificial de última geração desenvolvida pela Google. Ela é capaz de aprender e se adaptar a novas situações, tornando-se cada vez mais inteligente com o tempo.</p>
 
-    var width = canvas.width;
-    var height = canvas.height;
+  <h2>Características da IA Google Gemini Pro</h2>
 
-    var points = [];
-    var lines = [];
+  <ul>
+    <li>Aprendizado de máquina: A IA Gemini Pro é capaz de aprender com dados e experiências, melhorando seu desempenho ao longo do tempo.</li>
+    <li>Processamento de linguagem natural: A IA Gemini Pro é capaz de entender e gerar linguagem natural, permitindo que ela se comunique com os usuários de forma natural.</li>
+    <li>Visão computacional: A IA Gemini Pro é capaz de processar imagens e vídeos, permitindo que ela reconheça objetos e cenas.</li>
+    <li>Robótica: A IA Gemini Pro é capaz de controlar robôs, permitindo que ela execute tarefas físicas.</li>
+  </ul>
 
-    function init() {
-      for (var i = 0; i < 100; i++) {
-        points.push({
-          x: Math.random() * width,
-          y: Math.random() * height
-        });
-      }
+  <h2>Aplicações da IA Google Gemini Pro</h2>
 
-      for (var i = 0; i < 100; i++) {
-        var point1 = points[i];
-        var point2 = points[Math.floor(Math.random() * points.length)];
+  A IA Google Gemini Pro tem uma ampla gama de aplicações, incluindo:
 
-        lines.push({
-          point1: point1,
-          point2: point2
-        });
-      }
+  <ul>
+    <li>Assistentes virtuais: A IA Gemini Pro pode ser usada para criar assistentes virtuais que podem ajudar os usuários com tarefas do dia a dia, como agendar compromissos, fazer reservas e responder perguntas.</li>
+    <li>Tradução automática: A IA Gemini Pro pode ser usada para traduzir textos e falas de uma língua para outra, em tempo real.</li>
+    <li>Detecção de fraudes: A IA Gemini Pro pode ser usada para detectar fraudes em transações financeiras e outras atividades online.</li>
+    <li>Diagnóstico médico: A IA Gemini Pro pode ser usada para ajudar os médicos a diagnosticar doenças, analisando imagens médicas e dados de pacientes.</li>
+    <li>Controle de tráfego: A IA Gemini Pro pode ser usada para controlar o tráfego em rodovias e cidades, otimizando o fluxo de veículos.</li>
+  </ul>
 
-      requestAnimationFrame(draw);
-    }
+  <h2>O futuro da IA Google Gemini Pro</h2>
 
-    function draw() {
-      ctx.clearRect(0, 0, width, height);
+  A IA Google Gemini Pro é uma tecnologia em constante evolução. Com o tempo, ela se tornará ainda mais inteligente e capaz, abrindo novas possibilidades para sua aplicação em diversos setores.
 
-      for (var i = 0; i < lines.length; i++) {
-        var line = lines[i];
-
-        ctx.beginPath();
-        ctx.moveTo(line.point1.x, line.point1.y);
-        ctx.lineTo(line.point2.x, line.point2.y);
-        ctx.stroke();
-      }
-
-      requestAnimationFrame(draw);
-    }
-
-    init();
-  </script>
+  <p>A IA Google Gemini Pro tem o potencial de revolucionar a forma como vivemos e trabalhamos. Ela pode nos ajudar a resolver problemas complexos, melhorar nossa saúde e segurança e tornar nossas vidas mais convenientes.</p>
 </body>
 </html>
 ```
 
-Este código cria uma tela em branco e, em seguida, gera 100 pontos aleatórios na tela. Em seguida, ele gera 100 linhas aleatórias que conectam os pontos. Finalmente, ele usa a função `requestAnimationFrame` para desenhar continuamente as linhas na tela, criando a ilusão de fios se entrelaçando.
+```css
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 20px;
+}
+```
+
+Este código cria um site simples e informativo sobre a IA Google Gemini Pro. O site inclui uma introdução, uma seção sobre as características da IA, uma seção sobre suas aplicações e uma seção sobre o futuro da IA. O site é escrito em HTML e CSS e usa uma fonte sans-serif para facilitar a leitura. O site também é responsivo, o que significa que ele se ajusta automaticamente ao tamanho da tela do dispositivo em que está sendo visualizado.
