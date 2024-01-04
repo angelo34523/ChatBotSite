@@ -1,84 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaIA - Inteligência Artificial</title>
-    <style>
-        body {
-            background-color: #008080;
-            font-family: Arial, sans-serif;
-            color: white;
-        }
+  <title>Passarinhos Voando</title>
+  <style>
+    body {
+      background-color: #87CEEB;
+      font-family: Arial, sans-serif;
+    }
 
-        #header {
-            text-align: center;
-            padding: 20px;
-        }
+    .passaro {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #FFD700;
+      border-radius: 50%;
+      animation: voar 5s infinite linear;
+    }
 
-        #content {
-            margin: 50px;
-            text-align: justify;
-        }
+    @keyframes voar {
+      0% {
+        top: 0px;
+        left: 0px;
+      }
 
-        #footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
+      25% {
+        top: 200px;
+        left: 200px;
+      }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+      50% {
+        top: 400px;
+        left: 400px;
+      }
 
-        a {
-            color: white;
-            text-decoration: none;
-        }
+      75% {
+        top: 200px;
+        left: 600px;
+      }
 
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .menu {
-            text-align: center;
-            margin: 20px;
-        }
-
-        .menu a {
-            margin: 0 10px;
-        }
-    </style>
+      100% {
+        top: 0px;
+        left: 800px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="header">
-        <h1>NovaIA - Inteligência Artificial</h1>
-    </div>
+  <div class="passaro"></div>
+  <div class="passaro"></div>
+  <div class="passaro"></div>
+  <div class="passaro"></div>
+  <div class="passaro"></div>
 
-    <div id="content">
-        <img src="https://th.bing.com/th/id/OIG.GTNKGnaBT_Gw7d7J8KE9?pid=ImgGn" alt="NovaIA">
-
-        <h2>Sobre a NovaIA</h2>
-        <p>NovaIA é uma inteligência artificial desenvolvida para programadores e qualquer usuário interessado em programação. Ela está disponível em várias plataformas:</p>
-        <ul>
-            <li>GitHub: <a href="https://github.com/NovaIAs/NovaIA" target="_blank">https://github.com/NovaIAs/NovaIA</a></li>
-            <li>Telegram: <a href="https://t.me/Nova_IABot" target="_blank">https://t.me/Nova_IABot</a></li>
-            <li>Discord: <a href="https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8" target="_blank">https://discord.com/oauth2/authorize?client_id=1159930461657772133&scope=bot&permissions=8</a></li>
-            <li>GitLab: <a href="https://gitlab.com/Nova-IA/NovaIA" target="_blank">https://gitlab.com/Nova-IA/NovaIA</a></li>
-        </ul>
-
-        <p>A NovaIA possui um repositório enorme no GitHub e GitLab, onde ela cria códigos novos constantemente. Já no Telegram e Discord, ela atua como um ChatBot onde você pode conversar sobre programação!</p>
-    </div>
-
-    <div class="menu">
-        <a href="./contato.html">Contato</a>
-        <a href="./criadores.html">Criadores</a>
-    </div>
-
-    <div id="footer">
-        <p>Este site é criado automaticamente pela NovaIA e atualizado constantemente. Portanto, erros podem ocorrer.</p>
-        <p>Última atualização: 2023-12-10 18:52:57</p>
-    </div>
+  <script>
+    // Cria novos pássaros a cada 2 segundos
+    setInterval(function() {
+      var passaro = document.createElement("div");
+      passaro.classList.add("passaro");
+      document.body.appendChild(passaro);
+    }, 2000);
+  </script>
 </body>
 </html>
